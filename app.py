@@ -19,7 +19,8 @@ def extract_keywords():
     text = data.get('text', '')
     
     doc = nlp(text)
-    keywords = [ent.text for ent in doc.ents if ent.label_ in ['CHEMICAL', 'DISEASE', 'DRUG']]
+    # scispaCy extracts general biomedical entities without specific types
+    keywords = [ent.text.strip() for ent in doc.ents if len(ent.text.strip()) > 2]
     
     return jsonify({"keywords": keywords})
 
