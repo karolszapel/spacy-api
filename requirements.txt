@@ -1,4 +1,5 @@
 flask==2.3.3
 spacy==3.4.4
+scispacy==0.5.1
 https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.1/en_core_sci_md-0.5.1.tar.gz
 gunicorn==21.2.0
